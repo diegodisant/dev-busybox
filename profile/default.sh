@@ -2,6 +2,7 @@
 
 BUSYBOX_HOME="${HOME}/Documents/personal-dev/dev-busybox"
 BUSYBOX_SCRIPTS="${BUSYBOX_HOME}/scripts"
+BUSYBOX_ALIASES="${BUSYBOX_HOME}/alias"
 
 source "${BUSYBOX_HOME}/src/deps.sh"
 
@@ -56,3 +57,7 @@ function setup_project() {
 }
 
 alias box-setup="setup_project"
+
+# CUSTOM ALIASES
+
+source "${BUSYBOX_ALIASES}/global-sellercenter.sh"
