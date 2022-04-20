@@ -61,3 +61,4 @@ alias box-setup="setup_project"
 # CUSTOM ALIASES
 
 source "${BUSYBOX_ALIASES}/global-sellercenter.sh"
+source "${BUSYBOX_ALIASES}/sellercenter.sh"
