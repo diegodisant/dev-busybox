@@ -3,15 +3,15 @@ alias gsc-home="cd ${WORKSPACE_DIR}/global-sellercenter"
 alias gsc-source="gsc-home && cd sellercenter"
 
 # MACHINE
-alias gsc-eval='gsc-home && docker-machine env ${MACHINE_NAME} && eval "$(docker-machine env ${MACHINE_NAME})"'
+alias gsc-eval='gsc-home && docker-machine env ${GSC_MACHINE_NAME} && eval "$(docker-machine env ${GSC_MACHINE_NAME})"'
 alias gsc-exec="gsc-eval && docker-compose exec sellercenter"
 
-alias gsc-machine-ip="gsc-eval && docker-machine ip ${MACHINE_NAME}"
-alias gsc-start-machine="docker-machine start ${MACHINE_NAME} && gsc-eval && print_info \"replace your host file /etc/hosts to point machine ${MACHINE_NAME} ip\" && gsc-machine-ip"
-alias gsc-stop-machine="docker-machine stop ${MACHINE_NAME}"
+alias gsc-machine-ip="gsc-eval && docker-machine ip ${GSC_MACHINE_NAME}"
+alias gsc-start-machine="docker-machine start ${GSC_MACHINE_NAME} && gsc-eval && print_info \"replace your host file /etc/hosts to point machine ${GSC_MACHINE_NAME} ip\" && gsc-machine-ip"
+alias gsc-stop-machine="docker-machine stop ${GSC_MACHINE_NAME}"
 
-alias gsc-destroy-machine="docker-machine rm ${MACHINE_NAME}"
-alias gsc-create-machine="docker-machine create --driver virtualbox --virtualbox-cpu-count 5 --virtualbox-disk-size 30720 --virtualbox-memory 6144 --virtualbox-hostonly-nictype virtio --virtualbox-nat-nictype virtio ${MACHINE_NAME} && docker-machine-nfs ${MACHINE_NAME}"
+alias gsc-destroy-machine="docker-machine rm ${GSC_MACHINE_NAME}"
+alias gsc-create-machine="docker-machine create --driver virtualbox --virtualbox-cpu-count 5 --virtualbox-disk-size 30720 --virtualbox-memory 6144 --virtualbox-hostonly-nictype virtio --virtualbox-nat-nictype virtio ${GSC_MACHINE_NAME} && docker-machine-nfs ${GSC_MACHINE_NAME}"
 
 # CONTROL
 alias gsc-start="gsc-home && gsc-start-machine && docker-compose up -d"
